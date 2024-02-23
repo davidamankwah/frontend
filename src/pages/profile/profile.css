@@ -1,0 +1,25 @@
+/* profile.css */
+
+.profilePage {
+    width: 100%;
+    padding: 2rem 6%;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+  }
+  
+  @media (max-width: 1000px) {
+    .profilePage {
+      flex-direction: column;
+    }
+  }
+  
+  .profilePageSection {
+    flex-basis: 26%;
+  }
+  
+  .profilePageSection.large {
+    flex-basis: auto; /* Set to 'auto' to take the available width */
+    margin-top: 2rem;
+  }
+  

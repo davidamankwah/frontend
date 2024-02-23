@@ -1,0 +1,31 @@
+/* home.css */
+
+.homePage {
+  width: 100%;
+  padding: 2rem 6%;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-between;
+}
+
+@media (max-width: 1000px) {
+  .homePage {
+    flex-direction: column;
+  }
+}
+
+.homePageSection {
+  flex-basis: 26%;
+}
+
+.homePageSection.large {
+  flex-basis: 42%;
+  margin-top: 2rem;
+}
+
+.homePageSectionWithSticky {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 1rem; /* Optional: Add padding for spacing */
+}
