@@ -75,7 +75,7 @@ const Form = () => {
     try {
       console.log("Logging in with valuesxxx:");
       console.log(JSON.stringify(values));
-      const loggedInResponse = await fetch("http://frontend-dnnx.onrender.com/auth/login", {
+      const loggedInResponse = await fetch("https://frontend-dnnx.onrender.com/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values),
