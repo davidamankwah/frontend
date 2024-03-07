@@ -73,7 +73,8 @@ const Form = () => {
 
   const login = async (values, onSubmitProps) => {
     try {
-      console.log("Logging in with values:", JSON.stringify(values));
+      console.log("Logging in with values1:");
+      console.log(JSON.stringify(values));
       const loggedInResponse = await fetch("http://localhost:4000/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
