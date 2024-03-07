@@ -59,7 +59,7 @@ import io from 'socket.io-client'; // Import Socket.IO client
 const patchLike = async () => {
   try {
     // Sending a PATCH request to update like status
-    const response = await fetch(`http://localhost:4000/posts/${postId}/like`, {
+    const response = await fetch(`https://frontend-dnnx.onrender.com/posts/${postId}/like`, {
       method: "PATCH",
       headers: {
         Permitted: `Bearer ${token}`, // Including the bearer token for authentication
@@ -93,7 +93,7 @@ const patchLike = async () => {
     try {
        // Log the postId before making the request
       console.log('Disliking post with postId:', postId);
-      const response = await fetch(`http://localhost:4000/posts/${postId}/dislike`, {
+      const response = await fetch(`https://frontend-dnnx.onrender.com/posts/${postId}/dislike`, {
         method: "PATCH",
         headers: {
           Permitted: `Bearer ${token}`,

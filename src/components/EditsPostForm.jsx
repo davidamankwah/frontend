@@ -18,7 +18,7 @@ const EditsPostForm = ({ postId, currentText, onUpdate }) => {
     try {
       // Make a PATCH request to update the post
       const response = await axios.patch(
-        `http://localhost:4000/posts/${postId}`,
+        `https://frontend-dnnx.onrender.com/posts/${postId}`,
         { text: editedText, userId: loggedInUserId }, // Include userId in the request body
         {
           headers: {

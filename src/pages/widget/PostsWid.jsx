@@ -11,7 +11,7 @@ const PostsWid = ({ userId, isProfile = false }) => {
 
   // Function to fetch all posts
   const getPosts = async () => {
-    const response = await fetch("http://localhost:4000/posts", {
+    const response = await fetch("https://frontend-dnnx.onrender.com/posts", {
       method: "GET",
       headers: { Permitted: `Bearer ${token}` }, // Including the bearer token for authentication
     });
@@ -22,7 +22,7 @@ const PostsWid = ({ userId, isProfile = false }) => {
   // Function to fetch posts associated with a specific user
   const getUserPosts = async () => {
     const response = await fetch(
-      `http://localhost:4000/posts/${userId}/posts`,
+      `https://frontend-dnnx.onrender.com/posts/${userId}/posts`,
       {
         method: "GET",
         headers: { Permitted: `Bearer ${token}` }, // Including the bearer token for authentication

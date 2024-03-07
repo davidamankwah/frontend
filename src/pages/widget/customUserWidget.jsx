@@ -18,7 +18,7 @@ const CustomUserWidget = ({ userId, picturePath }) => {
   const medium = palette.neutral.medium;
 
   const getUserById  = async () => {
-    const response = await fetch(`http://localhost:4000/users/${userId}`, {
+    const response = await fetch(`https://frontend-dnnx.onrender.com/users/${userId}`, {
       method: "GET",
       headers: { Permitted: `Bearer ${token}` },
     });

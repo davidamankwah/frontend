@@ -30,7 +30,7 @@ import {EditOutlined,DeleteOutlined,ImageOutlined,} from "@mui/icons-material";
         formData.append("picturePath", image.name);
       }
       // Sending a POST request to create a new post
-      const response = await fetch(`http://localhost:4000/posts`, {
+      const response = await fetch(`https://frontend-dnnx.onrender.com/posts`, {
         method: "POST",
         headers: { Permitted: `Bearer ${token}` },
         body: formData,

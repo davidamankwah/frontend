@@ -14,7 +14,7 @@ const FollowersWidget = ({ userId }) => {
   // Function to fetch followers for the given user
   const getFollowers = async () => {
     const response = await fetch(
-      `http://localhost:4000/users/${userId}/followers`,
+      `https://frontend-dnnx.onrender.com/users/${userId}/followers`,
       {
         method: "GET",
         headers: { Permitted: `Bearer ${token}` },

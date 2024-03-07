@@ -58,7 +58,7 @@ const Form = () => {
     }
     formData.append("picturePath", values.pic.name);
 
-  const savedUserResponse = await fetch("http://localhost:4000/auth/register", {
+  const savedUserResponse = await fetch("https://frontend-dnnx.onrender.com/auth/register", {
   method: "POST",
   body: formData,
 });
