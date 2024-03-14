@@ -59,7 +59,7 @@ import io from 'socket.io-client'; // Import Socket.IO client
 const patchLike = async () => {
   try {
     // Sending a PATCH request to update like status
-    const response = await fetch(`https://frontend-dnnx.onrender.com/posts/${postId}/like`, {
+    const response = await fetch(`https://server-tyt9.onrender.com/posts/${postId}/like`, {
       method: "PATCH",
       headers: {
         Permitted: `Bearer ${token}`, // Including the bearer token for authentication
@@ -93,7 +93,7 @@ const patchLike = async () => {
     try {
        // Log the postId before making the request
       console.log('Disliking post with postId:', postId);
-      const response = await fetch(`https://frontend-dnnx.onrender.com/posts/${postId}/dislike`, {
+      const response = await fetch(`https://server-tyt9.onrender.com/posts/${postId}/dislike`, {
         method: "PATCH",
         headers: {
           Permitted: `Bearer ${token}`,
@@ -121,7 +121,7 @@ const patchLike = async () => {
   const handleDelete = async () => {
     // Sending a DELETE request to delete the post
     const response = await fetch(
-      `http://localhost:4000/posts/${postId}`,
+      `https://server-tyt9.onrender.com/posts/${postId}`,
       {
         method: "DELETE",
         headers: {
@@ -148,7 +148,7 @@ const patchLike = async () => {
   // Function to handle comment submission
 const handleCommentSubmit = async () => {
   // Send a POST request to add a comment
-  const response = await fetch(`http://localhost:4000/posts/${postId}/comments`, {
+  const response = await fetch(`https://server-tyt9.onrender.com/posts/${postId}/comments`, {
     method: "POST",
     headers: {
       Authorization: `Bearep ${token}`, 
@@ -173,7 +173,7 @@ const handleCommentSubmit = async () => {
 
 const handleReplySubmit = async (commentId) => {
   try {
-    const response = await fetch(`http://localhost:4000/posts/${postId}/comments/${commentId}/replies`, {
+    const response = await fetch(`https://server-tyt9.onrender.com/posts/${postId}/comments/${commentId}/replies`, {
       method: 'POST',
       headers: {
         Authorization: `Bearep ${token}`,
@@ -203,7 +203,7 @@ const handleReplySubmit = async (commentId) => {
 // In your React component
 const handleDeleteComment = async (postId, commentId) => {
   try {
-    const response = await fetch(`http://localhost:4000/posts/${postId}/comments/${commentId}`, {
+    const response = await fetch(`https://server-tyt9.onrender.com/posts/${postId}/comments/${commentId}`, {
       method: 'DELETE',
       headers: {
         Authorization: `Bearep ${token}`,

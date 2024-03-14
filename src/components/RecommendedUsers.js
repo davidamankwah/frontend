@@ -11,7 +11,7 @@ const RecommendedUsers = ({ token }) => {
   useEffect(() => {
     const fetchRecommendedUsers = async () => {
       try {
-        const response = await fetch("https://frontend-dnnx.onrender.com/users/recommended", {
+        const response = await fetch("https://server-tyt9.onrender.com/users/recommended", {
           method: "GET",
           headers: { Permitted: `Bearer ${token}` },
         });

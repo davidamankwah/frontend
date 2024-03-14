@@ -22,7 +22,7 @@ const PostsWid = ({ userId, isProfile = false }) => {
   // Function to fetch posts associated with a specific user
   const getUserPosts = async () => {
     const response = await fetch(
-      `https://frontend-dnnx.onrender.com/posts/${userId}/posts`,
+      `https://server-tyt9.onrender.com/posts/${userId}/posts`,
       {
         method: "GET",
         headers: { Permitted: `Bearer ${token}` }, // Including the bearer token for authentication

@@ -58,7 +58,7 @@ const Form = () => {
     }
     formData.append("picturePath", values.pic.name);
 
-  const savedUserResponse = await fetch("https://frontend-dnnx.onrender.com/auth/register", {
+  const savedUserResponse = await fetch("https://server-tyt9.onrender.com/auth/register", {
   method: "POST",
   body: formData,
 });
@@ -75,7 +75,7 @@ const Form = () => {
     try {
       console.log("Logging in with valuesxxx:");
       console.log(JSON.stringify(values));
-      const loggedInResponse = await fetch("https://frontend-dnnx.onrender.com/auth/login", {
+      const loggedInResponse = await fetch("https://server-tyt9.onrender.com/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values),

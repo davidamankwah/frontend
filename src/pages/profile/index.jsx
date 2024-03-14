@@ -19,7 +19,7 @@ const ProfilePage = () => {
   useEffect(() => {
     const getUser = async () => {
       try {
-        const response = await fetch(`https://frontend-dnnx.onrender.com/users/${userId}`, {
+        const response = await fetch(`https://server-tyt9.onrender.com/users/${userId}`, {
           method: "GET",
           headers: { Permitted: `Bearer ${token}` },
         });

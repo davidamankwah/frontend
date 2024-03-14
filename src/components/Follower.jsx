@@ -28,7 +28,7 @@ const Follower = ({ followerId, name,profileImage }) => {
   const patchFollower = async () => {
     // Sending a PATCH request to update follower status
     const response = await fetch(
-      `https://frontend-dnnx.onrender.com/users/${_id}/${followerId}`,
+      `https://server-tyt9.onrender.com/users/${_id}/${followerId}`,
       {
         method: "PATCH",
         headers: {
