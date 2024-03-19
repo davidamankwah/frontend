@@ -43,7 +43,7 @@ const Navbar = () => {
     const fullName = `${user.userName}`;
     const handleSearch = async () => {
       try {
-        const response = await fetch(`http://localhost:4000/users/search/${searchQuery}`);
+        const response = await fetch(`https://server-tyt9.onrender.com/users/search/${searchQuery}`);
   
         if (response.ok) {
           const result = await response.json();
