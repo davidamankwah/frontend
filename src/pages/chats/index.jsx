@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import "./chats.css";
 
 let socket;
-const CONNECTION_PORT = "http://localhost:4001";
+const CONNECTION_PORT = "https://server-tyt9.onrender.com";
 
 const ChatsPage = () => {
   const [loggedIn, setLoggedIn] = useState(false);

@@ -12,7 +12,7 @@ const NotfiPage = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const socket = io('http://localhost:4001'); 
+    const socket = io('https://server-tyt9.onrender.com'); 
     socket.on("notification", (data) => {
       dispatch(setNotifications([...notifications, data.message]));
     });

@@ -41,7 +41,7 @@ import io from 'socket.io-client'; // Import Socket.IO client
     const main = palette.neutral.main;
     const primary = palette.primary.main;
     // Socket.IO connection
-   const socket = io('http://localhost:4001'); 
+   const socket = io('https://server-tyt9.onrender.com'); 
 
     // Listen for notifications from the server
     useEffect(() => {
