@@ -11,7 +11,7 @@ const PostsWid = ({ userId, isProfile = false }) => {
 
   // Function to fetch all posts
   const getPosts = async () => {
-    const response = await fetch("https://frontend-dnnx.onrender.com/posts", {
+    const response = await fetch("http://localhost:4000/posts", {
       method: "GET",
       headers: { Permitted: `Bearer ${token}` }, // Including the bearer token for authentication
     });

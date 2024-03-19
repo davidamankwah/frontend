@@ -17,6 +17,7 @@ import {
   Close,
 } from "@mui/icons-material";
 import NotificationsIcon from '@mui/icons-material/Notifications';
+import MailIcon from '@mui/icons-material/Mail';
 import { useDispatch, useSelector } from "react-redux";
 import { setLogout } from "../../state";
 
@@ -71,6 +72,11 @@ const Navbar = () => {
     navigate(`/notification/`);
    };
 
+   const handleMessageClick = () => {
+    console.log('Navigating to Message');
+    navigate(`/message/`);
+   };
+
     return (
         <FlexBetween padding="1rem 6%" backgroundColor={alt}>
       <FlexBetween gap="1.75rem">
@@ -121,6 +127,7 @@ const Navbar = () => {
         <FlexBetween gap="2rem">
           <Message key={user._id} onClick={() => handleChatClick()}  sx={{ fontSize: "25px" }} />
           <NotificationsIcon onClick={() => handleNotifyClick()}></NotificationsIcon>
+          <MailIcon onClick={() => handleMessageClick()}></MailIcon>
           <FormControl variant="standard" value={fullName}>
             <Select
               value={fullName}
@@ -185,6 +192,7 @@ const Navbar = () => {
           >    
             <Message key={user._id}  onClick={() => handleChatClick()} sx={{ fontSize: "25px" }} />
             <NotificationsIcon onClick={() => handleNotifyClick()}></NotificationsIcon>
+            <MailIcon onClick={() => handleMessageClick()}></MailIcon>
             <FormControl variant="standard" value={fullName}>
               <Select
                 value={fullName}

@@ -1,19 +1,20 @@
+// NotfiPage.js
 import { Box, Typography, Paper } from "@mui/material";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import React, { useState, useEffect } from 'react';
 import Navbar from "../../pages/navbar";
-import io from 'socket.io-client'; // Import Socket.IO client
+import io from 'socket.io-client';
+import { setNotifications } from "../../state";
 
 const NotfiPage = () => {
-  const user = useSelector((state) => state.user);
-  const [notifications, setNotifications] = useState([]);
+  const dispatch = useDispatch();
+  const notifications = useSelector((state) => state.notifications);
   const [error, setError] = useState(null);
 
-  // Listen for notifications from the server
   useEffect(() => {
     const socket = io('http://localhost:4001'); 
     socket.on("notification", (data) => {
-      setNotifications(prevNotifications => [...prevNotifications, data.message]);
+      dispatch(setNotifications([...notifications, data.message]));
     });
 
     socket.on("connect_error", (error) => {
@@ -23,7 +24,7 @@ const NotfiPage = () => {
     return () => {
       socket.disconnect();
     };
-  }, []);
+  }, [notifications]);
 
   return (
     <Box>

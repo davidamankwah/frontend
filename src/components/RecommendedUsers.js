@@ -48,7 +48,7 @@ const RecommendedUsers = ({ token }) => {
 
   return (
     <div className="recommended-users">
-      <Typography variant="h6">Who to Follow:</Typography>
+      <Typography variant="h6">Suggested for you:</Typography>
       {recommendedUsers.map((recommendedUser) => (
         <Follower
           key={recommendedUser._id}

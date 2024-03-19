@@ -1,13 +1,14 @@
 import { PersonAddOutlined, PersonRemoveOutlined } from "@mui/icons-material";
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { setFollowers } from "../state";
 import FlexBetween from "../components/FlexBetween";
 import ProfileImage from "../components/ProfileImage";
 
 // Importing necessary dependencies and components
-const Follower = ({ followerId, name,profileImage }) => {
+const Follower = ({ followerId, name,profileImage}) => {
   // Redux hooks for dispatching actions and accessing state
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -19,13 +20,15 @@ const Follower = ({ followerId, name,profileImage }) => {
   const primaryLight = palette.primary.light;
   const primaryDark = palette.primary.dark;
   const main = palette.neutral.main;
+  
 
   // Check if the user is already a follower
   const isFollower = Array.isArray(followers) && followers.find((follower) => follower._id === followerId);
 
 
-  // Function to toggle follower status
-  const patchFollower = async () => {
+// Function to toggle follower status
+const patchFollower = async () => {
+  try {
     // Sending a PATCH request to update follower status
     const response = await fetch(
       `https://server-tyt9.onrender.com/users/${_id}/${followerId}`,
@@ -40,7 +43,12 @@ const Follower = ({ followerId, name,profileImage }) => {
     // Dispatching an action to update the Redux state with the new followers list
     const data = await response.json();
     dispatch(setFollowers({ followers: data }));
-  };
+
+  } catch (error) {
+    console.error("Error in patchFollower:", error);
+  }
+};
+
 
   return (
     <FlexBetween>

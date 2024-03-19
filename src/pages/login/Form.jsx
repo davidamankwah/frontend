@@ -50,6 +50,12 @@ const Form = () => {
   const isRegister = pageType === "register";
 
   const register = async (values, onSubmitProps) => {
+
+     // Check if any of the required fields are empty
+     if (!values.pic) {
+      console.log("Please upload an image.");
+    }
+      
     // this allows us to send form info with image
     console.log("Register function called with values:", values)
     const formData = new FormData();
@@ -73,8 +79,7 @@ const Form = () => {
 
   const login = async (values, onSubmitProps) => {
     try {
-      console.log("Logging in with valuesxxx:");
-      console.log(JSON.stringify(values));
+      console.log("Logging in with values:", values);
       const loggedInResponse = await fetch("https://server-tyt9.onrender.com/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },

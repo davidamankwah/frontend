@@ -76,9 +76,9 @@ const patchLike = async () => {
       // Emit a socket event to notify users of the like action
       socket.emit('like', { postId, userId: loggedInUserId, userName: names });
 
-
       // Optionally, you can also handle the notification here on the client-side
       console.log('Liked post:', postId);
+      
     } else {
       console.error("Failed to update like status");
     }
@@ -105,6 +105,7 @@ const patchLike = async () => {
       if (response.ok) {
         const updatedPost = await response.json();
         dispatch(setPost({ post: updatedPost }));
+      
       } else {
         if (response.status === 404) {
           console.error("Post not found:", postId);
@@ -240,7 +241,7 @@ const handleDeleteComment = async (postId, commentId) => {
   <div style={{ borderRadius: "0.75rem", marginTop: "0.75rem" }}>
     {picturePath.endsWith('.mp4') ? (
       <video width="100%" height="auto" controls>
-        <source src={`http://localhost:4000/assets/${picturePath}`} type="video/mp4" />
+        <source src={`https://server-tyt9.onrender.com/assets/${picturePath}`} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     ) : (
@@ -248,7 +249,7 @@ const handleDeleteComment = async (postId, commentId) => {
         width="100%"
         height="auto"
         alt="post"
-        src={`http://localhost:4000/assets/${picturePath}`}
+        src={`https://server-tyt9.onrender.com/assets/${picturePath}`}
       />
     )}
   </div>
@@ -295,9 +296,11 @@ const handleDeleteComment = async (postId, commentId) => {
               <Typography sx={{ color: '#ffffff', m: "0.5rem 0", pl: "1rem" }}>
                 <strong>{comment.userName}: </strong>
                 {comment.text}
+              {loggedInUserId === comment.userId && (
               <IconButton onClick={() => handleDeleteComment(postId, comment._id)} sx={{ color: '#f44336' }}>
               <DeleteOutlined />
              </IconButton>
+              )}
               </Typography>
 
           {/* Allow users to reply to comments */}

@@ -11,6 +11,7 @@ import HomePage from './pages/home';
 import LoginPage from './pages/login';
 import ChatsPage from './pages/chats';
 import ProfilePage from './pages/profile';
+import MessagePage from './pages/messages';
 import NotfiPage from './pages/notification';
 
 
@@ -39,7 +40,10 @@ function App() {
               path="/notification"
               element={isAuth ? <NotfiPage /> : <Navigate to="/" />}
             />
-           
+            <Route
+              path="/message"
+              element={isAuth ? <MessagePage /> : <Navigate to="/" />}
+            />
           </Routes>
           </ThemeProvider>
       </BrowserRouter>
